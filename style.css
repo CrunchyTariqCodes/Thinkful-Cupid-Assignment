@@ -55,11 +55,6 @@ main img {
   justify-content: space-between;
 }
 
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
-
 header {
   background-color: #83092e;
   padding: 20px 20px 0 20px;
@@ -98,17 +93,30 @@ form {
   padding: 10px;
 }
 
+form div{
+  display: flex;
+  align-items: flex-start;
+}
+
 form label {
   font-weight: bold;
+  flex: 1;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
   width: 180px;
+  flex: 1;
+}
+
+form div{
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 form button {
+  display: flex;
+  justify-content: center;
   background-color: #83092e;
   border: none;
   color: #fff;
@@ -130,15 +138,26 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px){
-  .group {
+  .group{
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
   }
-
-  .logo {
-    font-size: 36px;
+  #blog > .group{
+    flex-direction: column;
+    justify-content: flex-start;
   }
-
+  .group > .row {
+    display: flex;
+    flex-direction: row;
+    flex:1;
+  }
+  header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+  }
+  nav{
+    align-items: center;
+  }
 }
